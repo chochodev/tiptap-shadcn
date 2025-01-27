@@ -4,9 +4,7 @@ A powerful rich text editor built with TipTap and shadcn/ui components. Features
 
 ## Features
 
-- 🤖 **AI-Powered**: Built-in AI assistance for content generation and editing
 - 📁 **File Uploads**: Seamless file upload support with drag and drop functionality
-- ➗ **Math Equations**: LaTeX support for mathematical equations and formulas
 - 🎨 **Customizable**: Built with shadcn/ui components for easy customization
 - 🌙 **Dark Mode**: Full dark mode support with system preference detection
 - 📱 **Responsive**: Works great on desktop and mobile devices
@@ -15,7 +13,7 @@ A powerful rich text editor built with TipTap and shadcn/ui components. Features
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/tiptap-editor.git
+git clone https://github.com/ehtisham-afzal/tiptap-shadcn tiptap-editor
 cd tiptap-editor
 ```
 
@@ -67,29 +65,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## File structure
-
-├── app/
-│   ├── page.tsx
-│   ├── layout.tsx
-│   └── globals.css
-├── components/
-│   ├── layout/
-│   │   ├── header.tsx
-│   │   └── footer.tsx
-│   ├── tiptap/
-│   │   ├── Demo.tsx
-│   │   ├── extensions/
-│   │   │   ├── image.tsx
-│   │   │   ├── image-placeholder.tsx
-│   │   │   └── ...
-│   │   └── toolbars/
-│   │       ├── editor-toolbar.tsx
-│   │       └── ...
-│   └── ui/
-│       └── ... (shadcn components)
-├── lib/
-│   └── utils.ts
-└── public/
-    └── images/
