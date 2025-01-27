@@ -9,7 +9,7 @@ export function SiteFooter() {
           From{' '}
           <a
             className="font-medium underline underline-offset-4"
-            href={siteConfig.links.twitter}
+            href={siteConfig.links.website}
             rel="noreferrer"
             target="_blank"
           >

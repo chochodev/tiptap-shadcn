@@ -1,6 +1,6 @@
 # TipTap Editor
 
-A powerful rich text editor built with TipTap and shadcn/ui components. Features AI assistance, file uploads, math equations, and more.
+A powerful rich text editor built with TipTap and shadcn/ui components. Features file uploads, math equations, and more.
 
 ## Features
 
