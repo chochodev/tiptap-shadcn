@@ -37,29 +37,6 @@ export default function Home() {
           component={<RichTextEditorDemo className="w-full" />}
         />
       </section>
-
-      <section className="w-full container py-12">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-lg border bg-background p-6">
-            <h3 className="text-xl font-semibold mb-2">AI-Powered</h3>
-            <p className="text-muted-foreground">
-              Built-in AI assistance for content generation and editing
-            </p>
-          </div>
-          <div className="rounded-lg border bg-background p-6">
-            <h3 className="text-xl font-semibold mb-2">File Uploads</h3>
-            <p className="text-muted-foreground">
-              Seamless file upload support with drag and drop functionality
-            </p>
-          </div>
-          <div className="rounded-lg border bg-background p-6">
-            <h3 className="text-xl font-semibold mb-2">Math Equations</h3>
-            <p className="text-muted-foreground">
-              LaTeX support for mathematical equations and formulas
-            </p>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
