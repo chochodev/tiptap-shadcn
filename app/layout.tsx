@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,15 +22,15 @@ export const metadata: Metadata = {
   keywords: ["tiptap", "rich text editor", "react", "nextjs", "ai", "markdown"],
   authors: [
     {
-      name: "Your Name",
-      url: "https://github.com/yourusername",
+      name: siteConfig.author,
+      url: siteConfig.links.website,
     },
   ],
-  creator: "Your Name",
+  creator: siteConfig.author,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com",
+    url: siteConfig.ogImage,
     title: "TipTap Editor - Build Your Rich Text Editor",
     description: "A powerful rich text editor built with TipTap and shadcn/ui. Features AI assistance, file uploads, math equations, and more.",
     siteName: "TipTap Editor",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TipTap Editor - Build Your Rich Text Editor",
     description: "A powerful rich text editor built with TipTap and shadcn/ui. Features AI assistance, file uploads, math equations, and more.",
-    creator: "@yourusername",
+    creator: "@ehtisham_dev",
   },
 };
 

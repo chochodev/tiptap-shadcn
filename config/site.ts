@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "tiptap rich text editor built with Shadcn",
-  url: "https://mughalkhel.vercel.app",
-  ogImage: "https://mughalkhel.vercel.app/logo.jpg",
+  name: "TipTap Editor - Build Your Rich Text Editor",
+  url: "https://tiptap-shadcn.vercel.app",
+  ogImage: "https://tiptap-shadcn.vercel.app/og.jpg",
   author: "Ehtisham afzal",
   description:
     "A powerful rich text editor built with TipTap and shadcn/ui components. Features file uploads, math equations, and more.",
