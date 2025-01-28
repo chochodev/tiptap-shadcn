@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BlockViewer } from "./block-viewer";
-import { EditoFiles} from "@/components/tiptap/content"
+import { EditorFiles} from "@/components/tiptap/content"
 
 interface FileContent {
   name: string;
@@ -19,7 +19,7 @@ interface BlockViewerItem {
   name: string;
   component: React.ReactNode;
   description: string;
-  files: FileContent[];
+  files: FileContent[];  
 }
 
 export async function BlockDisplay({ 
@@ -33,25 +33,34 @@ export async function BlockDisplay({
     name,
     component,
     description: "A rich text editor with TipTap and shadcn/ui components",
-    files: EditoFiles
+    files: EditorFiles
   };
 
-  const tree: TreeItem[] = [
-    {
-      name: "components",
-      children: [
-        {
-          name: "tiptap",
-          children: [
-            {
-              name: "rich-text-editor.tsx",
-              path: "components/tiptap/rich-text-editor.tsx",
-            },
-          ],
-        },
-      ],
-    },
-  ];
+  const tree: TreeItem[] = item.files.reduce((acc: TreeItem[], file) => {
+    const parts = file.path.split('/');
+    let currentLevel = acc;
+
+    parts.slice(0, -1).forEach((part) => {
+      let existingFolder = currentLevel.find(item => item.name === part);
+      
+      if (!existingFolder) {
+        existingFolder = {
+          name: part,
+          children: []
+        };
+        currentLevel.push(existingFolder);
+      }
+      
+      currentLevel = existingFolder.children!;
+    });
+
+    currentLevel.push({
+      name: parts[parts.length - 1],
+      path: file.path
+    });
+
+    return acc;
+  }, []);
 
   const highlightedFiles: FileContent[] = item.files.map((file) => ({
     ...file,
@@ -59,6 +68,7 @@ export async function BlockDisplay({
   }));
 
   return (
+    // todo fix highlighing files and normal files selection
     <BlockViewer item={item} tree={tree} highlightedFiles={highlightedFiles} />
   );
 }

@@ -84,9 +84,11 @@ export function RichTextEditorDemo({ className }: { className?: string }) {
       },
     },
     onUpdate: ({ editor }) => {
+      // do what you want to do with output
       // Update stats
-      const text = editor.getText();
-      console.log(text);
+      // saving as text/json/hmtml
+      // const text = editor.getHTML();
+      console.log(editor.getText());
     },
   });
 

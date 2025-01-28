@@ -117,7 +117,7 @@
 .ProseMirror .selection,
 .ProseMirror *::selection {
   background-color: var(--editor-highlight-blue);
-  color: var(--editor-text-default);
+  /* color: var(--editor-text-default); */
 }
 
 .ProseMirror > .react-renderer {

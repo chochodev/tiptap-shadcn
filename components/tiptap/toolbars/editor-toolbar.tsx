@@ -20,6 +20,7 @@ import { AlignmentTooolbar } from "./alignment";
 import { ImagePlaceholderToolbar } from "./image-placeholder-toolbar";
 import { ColorHighlightToolbar } from "./color-and-highlight";
 import { SearchAndReplaceToolbar } from "./search-and-replace-toolbar";
+import { CodeBlockToolbar } from "./code-block";
 
 export const EditorToolbar = ({ editor }: { editor: Editor }) => {
   return (
@@ -38,6 +39,7 @@ export const EditorToolbar = ({ editor }: { editor: Editor }) => {
                 <HeadingsToolbar />
                 <BlockquoteToolbar />
                 <CodeToolbar />
+                <CodeBlockToolbar/>
                 <Separator orientation="vertical" className="mx-1 h-7" />
 
                 {/* Basic Formatting Group */}

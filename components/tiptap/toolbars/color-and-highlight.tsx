@@ -28,29 +28,29 @@ type TextStylingExtensions =
 	| Extension<HighlightOptions, any>;
 
 const TEXT_COLORS = [
-	{ name: "Default", color: "var(--text-default)" },
-	{ name: "Gray", color: "var(--text-gray)" },
-	{ name: "Brown", color: "var(--text-brown)" },
-	{ name: "Orange", color: "var(--text-orange)" },
-	{ name: "Yellow", color: "var(--text-yellow)" },
-	{ name: "Green", color: "var(--text-green)" },
-	{ name: "Blue", color: "var(--text-blue)" },
-	{ name: "Purple", color: "var(--text-purple)" },
-	{ name: "Pink", color: "var(--text-pink)" },
-	{ name: "Red", color: "var(--text-red)" },
+	{ name: "Default", color: "var(--editor-text-default)" },
+	{ name: "Gray", color: "var(--editor-text-gray)" },
+	{ name: "Brown", color: "var(--editor-text-brown)" },
+	{ name: "Orange", color: "var(--editor-text-orange)" },
+	{ name: "Yellow", color: "var(--editor-text-yellow)" },
+	{ name: "Green", color: "var(--editor-text-green)" },
+	{ name: "Blue", color: "var(--editor-text-blue)" },
+	{ name: "Purple", color: "var(--editor-text-purple)" },
+	{ name: "Pink", color: "var(--editor-text-pink)" },
+	{ name: "Red", color: "var(--editor-text-red)" },
 ];
 
 const HIGHLIGHT_COLORS = [
-	{ name: "Default", color: "var(--highlight-default)" },
-	{ name: "Gray", color: "var(--highlight-gray)" },
-	{ name: "Brown", color: "var(--highlight-brown)" },
-	{ name: "Orange", color: "var(--highlight-orange)" },
-	{ name: "Yellow", color: "var(--highlight-yellow)" },
-	{ name: "Green", color: "var(--highlight-green)" },
-	{ name: "Blue", color: "var(--highlight-blue)" },
-	{ name: "Purple", color: "var(--highlight-purple)" },
-	{ name: "Pink", color: "var(--highlight-pink)" },
-	{ name: "Red", color: "var(--highlight-red)" },
+	{ name: "Default", color: "var(--editor-highlight-default)" },
+	{ name: "Gray", color: "var(--editor-highlight-gray)" },
+	{ name: "Brown", color: "var(--editor-highlight-brown)" },
+	{ name: "Orange", color: "var(--editor-highlight-orange)" },
+	{ name: "Yellow", color: "var(--editor-highlight-yellow)" },
+	{ name: "Green", color: "var(--editor-highlight-green)" },
+	{ name: "Blue", color: "var(--editor-highlight-blue)" },
+	{ name: "Purple", color: "var(--editor-highlight-purple)" },
+	{ name: "Pink", color: "var(--editor-highlight-pink)" },
+	{ name: "Red", color: "var(--editor-highlight-red)" },
 ];
 
 interface ColorHighlightButtonProps {
