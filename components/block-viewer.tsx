@@ -1,18 +1,18 @@
 "use client";
 import * as React from "react";
 // import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import {
   Check,
   ChevronRight,
   Clipboard,
   File,
   Folder,
-  //   Fullscreen,
+  Fullscreen,
   Monitor,
   Smartphone,
   Tablet,
-  //   Terminal,
+  Terminal,
   //   X,
 } from "lucide-react";
 import { ImperativePanelHandle } from "react-resizable-panels";
@@ -43,6 +43,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { OpenInV0Button } from "./open-in-v0-button";
 
 interface FileContent {
   name: string;
@@ -133,7 +134,7 @@ function BlockViewerProvider({
 
 function BlockViewerToolbar() {
   const { setView, item, resizablePanelRef } = useBlockViewer();
-  //   const { copyToClipboard: copy, isCopied } = useCopyToClipboard();
+  const { copyToClipboard: copy, isCopied } = useCopyToClipboard();
 
   return (
     <div className="flex w-full items-center gap-2 md:pr-[14px]">
@@ -191,8 +192,42 @@ function BlockViewerToolbar() {
             >
               <Smartphone className="h-3.5 w-3.5" />
             </ToggleGroupItem>
+            <Separator orientation="vertical" className="h-4" />
+            <Button
+              size="icon"
+              variant="ghost"
+              className="h-[22px] w-[22px] rounded-sm p-0"
+              asChild
+              title="Open in New Tab"
+            >
+              <Link href={`blocks/${item.name}`} target="_blank">
+                <span className="sr-only">Open in New Tab</span>
+                <Fullscreen className="h-3.5 w-3.5" />
+              </Link>
+            </Button>
           </ToggleGroup>
         </div>
+        <Separator orientation="vertical" className="mx-1 hidden h-4 md:flex" />
+        <div className="flex h-7 items-center gap-1 rounded-md border p-[2px]">
+          <Button
+            variant="ghost"
+            className="hidden h-[22px] w-auto gap-1 rounded-sm px-2 md:flex lg:w-auto"
+            size="sm"
+            onClick={() => {
+              copy(
+                `npx shadcn@latest add http://tiptap-shadcn.vercel.app/r/${item.name}.json`
+              );
+            }}
+          >
+            {isCopied ? <Check /> : <Terminal />}
+            <span className="hidden lg:inline">npx shadcn add {item.name}</span>
+          </Button>
+        </div>
+        <Separator orientation="vertical" className="mx-1 hidden h-4 xl:flex" />
+        <OpenInV0Button
+          className="hidden shadow-none sm:flex rounded-md"
+          name={`${item.name}`}
+        />
       </div>
     </div>
   );

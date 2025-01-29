@@ -1,4 +1,4 @@
-import { RichTextEditorDemo } from "@/registry/basic/components/rich-text-editor";
+import { RichTextEditorDemo } from "@/components/tiptap/rich-text-editor";
 
 export default function Page() {
 

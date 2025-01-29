@@ -58,6 +58,11 @@
       ],
       "files": [
         {
+          "path": "registry/basic/page.tsx",
+          "type": "registry:page",
+          "target": "app/text-editor/page.tsx"
+        },
+        {
           "path": "registry/basic/components/rich-text-editor.tsx",
           "type": "registry:component",
           "target": "components/tiptap/rich-text-editor.tsx"
