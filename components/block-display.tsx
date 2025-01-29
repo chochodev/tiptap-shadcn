@@ -1,6 +1,7 @@
 import * as React from "react";
 import { BlockViewer } from "./block-viewer";
-import { EditorFiles} from "@/components/tiptap/content"
+import { getBlockFilesFromName } from "@/lib/utils";
+// import { EditorFiles} from "@/components/tiptap/content"
 
 interface FileContent {
   name: string;
@@ -19,44 +20,45 @@ interface BlockViewerItem {
   name: string;
   component: React.ReactNode;
   description: string;
-  files: FileContent[];  
+  files: FileContent[];
 }
 
-export async function BlockDisplay({ 
-  name, 
-  component 
-}: { 
-  name: string; 
+export async function BlockDisplay({
+  name,
+  component,
+}: {
+  name: string;
   component: React.ReactNode;
 }) {
+  const filesContent = await getBlockFilesFromName(name);
   const item: BlockViewerItem = {
     name,
     component,
     description: "A rich text editor with TipTap and shadcn/ui components",
-    files: EditorFiles
+    files: filesContent,
   };
 
   const tree: TreeItem[] = item.files.reduce((acc: TreeItem[], file) => {
-    const parts = file.path.split('/');
+    const parts = file.path.split("/");
     let currentLevel = acc;
 
     parts.slice(0, -1).forEach((part) => {
-      let existingFolder = currentLevel.find(item => item.name === part);
-      
+      let existingFolder = currentLevel.find((item) => item.name === part);
+
       if (!existingFolder) {
         existingFolder = {
           name: part,
-          children: []
+          children: [],
         };
         currentLevel.push(existingFolder);
       }
-      
+
       currentLevel = existingFolder.children!;
     });
 
     currentLevel.push({
       name: parts[parts.length - 1],
-      path: file.path
+      path: file.path,
     });
 
     return acc;
