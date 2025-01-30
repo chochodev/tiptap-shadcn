@@ -1,13 +1,5 @@
 export const content = `
-  <h1>
-      <span style="color: var(--editor-text-default)">Explore </span>the
-      <span><mark data-color="var(--editor-highlight-green)"
-              style="background-color: var(--editor-highlight-green); color: inherit">tiptap</mark></span>
-      rich text <span style="color: var(--editor-text-yellow)">editor</span> with
-      <mark data-color="var(--editor-highlight-yellow)"
-          style="background-color: var(--editor-highlight-yellow); color: inherit">shadcn-ui</mark>
-      components 📝
-  </h1>
+  <h1>Explore the tip tap rich text editor with Shadcn UI components 📝</h1>
   <p>This is a powerful editor that supports many features:</p>
   <ul class="list-disc">
       <li>

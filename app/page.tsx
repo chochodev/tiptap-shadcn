@@ -4,7 +4,7 @@ import {
   PageHeaderDescription,
   PageActions,
 } from "@/components/page-header";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Github } from "lucide-react";
 import { BlockDisplay } from "@/components/block-display";
 import Link from "next/link";
@@ -17,10 +17,10 @@ export default function Home() {
       <PageHeader className="w-full">
         <PageHeaderHeading>Build your rich-text editor</PageHeaderHeading>
         <PageHeaderDescription>
-          Framework · Plugins · Components · Themes
+          Framework · Plugins · Components
         </PageHeaderDescription>
         <PageActions>
-          <Button size="lg">Get Started</Button>
+          <Link href={"#basic-editor"} className={buttonVariants({ variant: "default", size: "lg", })}>Get Started</Link>
           <Link
             href={siteConfig.links.github}
             className={buttonVariants({ variant: "outline", size: "lg" })}
@@ -31,7 +31,7 @@ export default function Home() {
         </PageActions>
       </PageHeader>
 
-      <section className="w-full container py-12">
+      <section id="basic-editor" className="w-full container py-12 scroll-mt-10">
         <BlockDisplay
           name="basic"
           component={<RichTextEditorDemo className="w-full" />}
