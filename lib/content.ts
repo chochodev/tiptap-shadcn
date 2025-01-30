@@ -1,5 +1,5 @@
 export const content = `
-  <h1>Explore the tip tap rich text editor with Shadcn UI components 📝</h1>
+  <h1>Explore the Tiptap rich text editor with Shadcn UI components 📝</h1>
   <p>This is a powerful editor that supports many features:</p>
   <ul class="list-disc">
       <li>
