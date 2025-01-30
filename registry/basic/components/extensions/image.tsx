@@ -1,9 +1,8 @@
 "use client";
-/* eslint-disable */
 // @ts-nocheck
+/* eslint-disable */
 import Image from "@tiptap/extension-image";
 import {
-  NodeViewContent,
   type NodeViewProps,
   NodeViewWrapper,
   ReactNodeViewRenderer,
@@ -12,14 +11,11 @@ import {
   AlignCenter,
   AlignLeft,
   AlignRight,
-  CopyIcon,
   Maximize,
   MoreVertical,
   Trash,
   Edit,
   ImageIcon,
-  Link,
-  Upload,
   Loader2,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -38,15 +34,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { useImageUpload } from "@/hooks/use-image-upload";
 
 export const ImageExtension = Image.extend({
@@ -169,7 +156,7 @@ function TiptapImage(props: NodeViewProps) {
     event.preventDefault();
     setResizing(true);
     setResizingPosition(position);
-    setResizeInitialMouseX(event.touches[0].clientX);
+    setResizeInitialMouseX(event.touches[0]?.clientX ?? 0);
     if (imageRef.current) {
       setResizeInitialWidth(imageRef.current.offsetWidth);
     }
@@ -178,9 +165,9 @@ function TiptapImage(props: NodeViewProps) {
   function handleTouchMove(event: TouchEvent) {
     if (!resizing) return;
 
-    let dx = event.touches[0].clientX - resizeInitialMouseX;
+    let dx = (event.touches[0]?.clientX ?? resizeInitialMouseX) - resizeInitialMouseX;
     if (resizingPosition === "left") {
-      dx = resizeInitialMouseX - event.touches[0].clientX;
+      dx = resizeInitialMouseX - (event.touches[0]?.clientX ?? resizeInitialMouseX);
     }
 
     const newWidth = Math.max(resizeInitialWidth + dx, 150);
