@@ -18,8 +18,8 @@ import StarterKit from "@tiptap/starter-kit";
 import { TipTapFloatingMenu } from "@/components/tiptap/extensions/floating-menu";
 import { FloatingToolbar } from "@/components/tiptap/extensions/floating-toolbar";
 import { EditorToolbar } from "./toolbars/editor-toolbar";
-import Placeholder from "@tiptap/extension-placeholder"
-import {content} from "@/lib/content"
+import Placeholder from "@tiptap/extension-placeholder";
+import { content } from "@/lib/content";
 
 const extensions = [
   StarterKit.configure({
@@ -72,7 +72,6 @@ const extensions = [
   Typography,
 ];
 
-
 export function RichTextEditorDemo({ className }: { className?: string }) {
   const editor = useEditor({
     immediatelyRender: false,
@@ -97,19 +96,17 @@ export function RichTextEditorDemo({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "w-full bg-card rounded-xl border overflow-hidden",
+        "relative max-h-[calc(100dvh-6rem)]  w-full overflow-hidden overflow-y-scroll border bg-card pb-[60px] sm:pb-0",
         className
       )}
     >
       <EditorToolbar editor={editor} />
-      <div className="relative pb-[60px] sm:pb-0 overflow-y-scroll max-h-[700px]">
-        <FloatingToolbar editor={editor} />
-        <TipTapFloatingMenu editor={editor} />
-        <EditorContent
-          editor={editor}
-          className=" min-h-[600px] w-full min-w-full cursor-text p-0.5 sm:p-6"
-        />
-      </div>
+      <FloatingToolbar editor={editor} />
+      <TipTapFloatingMenu editor={editor} />
+      <EditorContent
+        editor={editor}
+        className=" min-h-[600px] w-full min-w-full cursor-text sm:p-6"
+      />
     </div>
   );
 }
