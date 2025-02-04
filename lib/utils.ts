@@ -19,9 +19,9 @@ export const getBlockFilesFromName = cache(async function (name: string) {
       throw new Error("Failed to fetch files");
     }
     const data = await response.json();
-    const files = data.files.map((file: { path: string; content: string }) => ({
-      name: file.path.split("/").pop(),
-      path: file.path,
+    const files = data.files.map((file: { target: string; content: string }) => ({
+      name: file.target.split("/").pop(),
+      path: file.target,
       content: file.content,
     }));
     return files;
