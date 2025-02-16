@@ -29,6 +29,7 @@ const ImagePlaceholderToolbar = React.forwardRef<
 						className,
 					)}
 					onClick={(e) => {
+						e.preventDefault()
 						editor?.chain().focus().insertImagePlaceholder().run();
 						onClick?.(e);
 					}}
