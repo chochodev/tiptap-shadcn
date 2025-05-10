@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "tiptap-shadcn-editor": {
+      "signature": "816a1a93558fc91ba48c2c341be71458",
+      "file": true
+    }
+  }
+}

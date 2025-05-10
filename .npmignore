@@ -1,0 +1,17 @@
+/node_modules
+/src
+/public
+
+.env
+tsconfig.json
+eslint.config.js
+package-lock.json
+registry.json
+vite.config.ts
+eslint.config.mjs
+package.json 
+components.json
+index.html
+postcss.config.mjs
+tailwind.config.ts
+registry.json
