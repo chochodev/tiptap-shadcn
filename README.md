@@ -48,7 +48,21 @@ content: [
 ];
 ```
 
-If you use the Tailwind Typography plugin, you can add the `prose` class to the editor content for better default styling.
+## Quick Start
+
+```tsx
+import { RichTextEditor } from 'tiptap-shadcn-editor';
+import 'tiptap-shadcn-editor/dist/index.css';
+
+function App() {
+  return (
+    <RichTextEditor
+      onUpdate={(content) => console.log(content)}
+      placeholder="Start writing..."
+    />
+  );
+}
+```
 
 ## Exporting CSS in Your Library (for maintainers)
 
@@ -74,21 +88,6 @@ Make sure your `package.json` includes the following in the `exports` field so c
   - If you use custom CSS variables (e.g., `--editor-text-orange`), define them in your global CSS or in a parent class.
   - Restart your dev server after making changes to your config or after updating the package.
 
-## Quick Start
-
-```tsx
-import { RichTextEditor } from 'tiptap-shadcn-editor';
-
-function App() {
-  return (
-    <RichTextEditor
-      onUpdate={(content) => console.log(content)}
-      placeholder="Start writing..."
-    />
-  );
-}
-```
-
 ## Props
 
 | Prop             | Type                        | Default                        | Description                     |
@@ -108,6 +107,7 @@ You can add custom TipTap extensions:
 
 ```tsx
 import { RichTextEditor } from 'tiptap-shadcn-editor';
+import 'tiptap-shadcn-editor/dist/index.css';
 import { Extension } from '@tiptap/core';
 
 const customExtension = Extension.create({
